@@ -1,0 +1,14 @@
+{
+  "name": "studychat-ai",
+  "version": "1.0.0",
+  "description": "AI-powered study assistant — upload documents and chat with AI",
+  "private": true,
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
