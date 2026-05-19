@@ -18,10 +18,7 @@ async function connectDB() {
     throw new Error('MONGO_URI environment variable is not set. Please add it in your Vercel project settings.');
   }
 
-  await mongoose.connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  await mongoose.connect(MONGO_URI);
 
   isConnected = true;
   console.log('MongoDB connected (serverless)');
