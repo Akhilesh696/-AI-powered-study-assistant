@@ -56,7 +56,7 @@ function Navbar() {
         justifyContent: 'space-between',
       }}>
         {/* Logo */}
-        <Link to={authenticated ? '/dashboard' : '/login'} style={{ textDecoration: 'none' }}>
+        <Link to="/dashboard" style={{ textDecoration: 'none' }}>
           <span style={{
             fontSize: '1.1rem',
             fontWeight: 800,
@@ -70,50 +70,9 @@ function Navbar() {
 
         {/* Right side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          {authenticated ? (
-            <>
-              {navLink('/dashboard', 'Dashboard', '📝')}
-              {navLink('/study', 'Study Chat', '💬')}
-              {navLink('/history', 'History', '🕘')}
-              <button
-                onClick={handleLogout}
-                style={{
-                  marginLeft: '0.5rem',
-                  padding: '0.35rem 0.9rem',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  background: 'rgba(255,255,255,0.06)',
-                  color: '#9ca3af',
-                  fontSize: '0.85rem',
-                  fontWeight: 500,
-                  cursor: 'pointer',
-                  transition: 'all 0.15s',
-                }}
-                onMouseEnter={e => { e.target.style.color = '#fff'; e.target.style.borderColor = 'rgba(255,255,255,0.25)'; }}
-                onMouseLeave={e => { e.target.style.color = '#9ca3af'; e.target.style.borderColor = 'rgba(255,255,255,0.12)'; }}
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link to="/login" style={{ fontSize: '0.88rem', color: '#9ca3af', textDecoration: 'none' }}>Login</Link>
-              <Link
-                to="/register"
-                style={{
-                  padding: '0.35rem 0.9rem',
-                  borderRadius: '8px',
-                  background: 'linear-gradient(135deg, #7c3aed, #6d28d9)',
-                  color: '#fff',
-                  fontSize: '0.88rem',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                }}
-              >
-                Register
-              </Link>
-            </>
-          )}
+          {navLink('/dashboard', 'Dashboard', '📝')}
+          {navLink('/study', 'Study Chat', '💬')}
+          {navLink('/history', 'History', '🕘')}
         </div>
       </div>
     </nav>
